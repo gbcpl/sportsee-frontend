@@ -1,5 +1,5 @@
 import { PureComponent } from 'react';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts';
 
 class UserActivity extends PureComponent {
 
@@ -34,7 +34,7 @@ class UserActivity extends PureComponent {
         if (user) {
           // Flatten sessions array into a single array
           const flattenedData = user.sessions.map((session, index) => ({
-            index: index + 1, // Index starts from 1
+            day: index + 1, // Index starts from 1
             kilogram: session.kilogram,
             calories: session.calories
           }));
@@ -51,8 +51,16 @@ class UserActivity extends PureComponent {
   render() {
     const { data } = this.state;
     return (
+      <div>
+        <div className="title">
+          <p>Activité quotidienne</p>
+          <div className="legend">
+            <img src="../src/assets/Oval.png" /><p>Poids (kg)</p>
+            <img src="../src/assets/oval-red.png" /><p>Calories brûlées (kCal)</p>
+          </div>
+        </div>
       <BarChart
-        width={500}
+        width={835}
         height={300}
         data={data}
         margin={{
@@ -66,10 +74,10 @@ class UserActivity extends PureComponent {
         <XAxis dataKey="day" />
         <YAxis orientation='right'/>
         <Tooltip />
-        <Legend />
-        <Bar dataKey="kilogram" fill="#8884d8"  />
-        <Bar dataKey="calories" fill="#82ca9d"  />
+        <Bar dataKey="kilogram" fill="#282D30" barSize={10} radius={[20, 20, 0, 0]} />
+        <Bar dataKey="calories" fill="#E60000" barSize={10} radius={[20, 20, 0, 0]} />
       </BarChart>
+      </div>
     )
 }
 }

@@ -56,7 +56,7 @@ class RadarStrenghts extends PureComponent {
 
     return (
       <ResponsiveContainer width="100%" height="100%">
-        <RadarChart cx="50%" cy="50%" outerRadius="80%" data={data}>
+        <RadarChart cx="50%" cy="50%" outerRadius="60%" data={data}>
           <PolarGrid />
           <PolarAngleAxis dataKey="kind" />
           <Radar dataKey="value" stroke="#8884d8" fill="#FF0101" fillOpacity={0.6} />
