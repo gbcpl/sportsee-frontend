@@ -1,0 +1,31 @@
+.data-count {
+  display: flex;
+  flex-direction: column;
+  p {
+    margin: 0px;
+  }
+  img {
+    width: 60px;
+    height: 60px;
+    margin: 32px;
+  }
+}
+
+.one-data {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 39px;
+}
+
+.type-count {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  .number {
+    font-weight: bold;
+    font-size: 20px;
+  }
+  .count {
+    font-size: 14px;
+  }
+}

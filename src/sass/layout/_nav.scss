@@ -1,0 +1,30 @@
+nav {
+  display: flex;
+  flex-direction: column;
+  width: 117px;
+  background-color: #020203;
+  color: white;
+  align-items: center;
+  padding-top: 256px;
+  img {
+    width: 64px;
+    height: 64px;
+  }
+  p {
+    writing-mode: vertical-lr;
+    text-orientation: sideways-left;
+    margin-bottom: 59px;
+    transform: rotate(180deg);
+    font-size: 12px;
+  }
+}
+
+.menu-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 164px;
+  gap: 20px;
+}
