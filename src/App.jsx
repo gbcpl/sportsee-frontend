@@ -3,16 +3,18 @@ import Header from './components/Header'
 import NavLeft from './components/NavLeft'
 import Welcome from './components/Welcome'
 import DataCount from './components/DataCount';
-import UserActivity from './models/UserActivity';
-import RadarStrenghts from './models/RadarStrenghts';
-import Sessions from './models/Sessions';
+import UserActivity from './components/UserActivity';
+import RadarStrenghts from './components/RadarStrenghts';
+import Sessions from './components/Sessions';
+import TodayScore from './components/TodayScore';
 
 function App() {
 
-  const [data,setData] = useState([]);
-  const getData=()=>{
-    fetch('../src/datas/main_user_data.json'
-    ,{
+  const [data, setData] = useState([]);
+
+  const getData = () => {
+    fetch('../src/datas/main_user_data.json',
+    {
       headers : { 
         'Content-Type': 'application/json',
         'Accept': 'application/json'
@@ -31,13 +33,13 @@ function App() {
 
   useEffect(()=>{
     getData()
-  },[])
+  }, [])
 
   const currentUrl = window.location.href;
-  const match = currentUrl.match(/\/user\/(\d+)/);
+  const matchUrl = currentUrl.match(/\/user\/(\d+)/);
   let userId = null;
-  if (match) {
-      userId = parseInt(match[1], 10);
+  if (matchUrl) {
+      userId = parseInt(matchUrl[1], 10);
   }
   const user = data.find(user => user.id === userId);  
 
@@ -52,13 +54,9 @@ function App() {
             <div className="charts">
               <UserActivity />
               <div className="radar-score">
-                <div className="sessions">
-                  <h2>Durée moyenne des sessions</h2>
-                  <Sessions />
-                </div>
-                <div className="radar">
-                  <RadarStrenghts />
-                </div>
+                <Sessions />
+                <RadarStrenghts />
+                <TodayScore />
               </div>
             </div>
             <DataCount data={data} user={user} />

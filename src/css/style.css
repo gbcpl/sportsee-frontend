@@ -153,22 +153,28 @@ nav p {
   width: 100%;
   height: 100%;
 }
-.radar-score .radar, .radar-score .sessions {
+.radar-score .radar, .radar-score .sessions, .radar-score .score {
   width: 258px;
   height: 263px;
   border-radius: 5px;
   margin-right: 30px;
+  position: relative;
 }
 
 .sessions {
   position: relative;
-  background-color: #FF0000;
   color: #FFFFFF;
 }
 .sessions h2 {
   position: absolute;
   font-size: 15px;
   font-weight: 500;
+  z-index: 2;
+  left: 34px;
+  top: 29px;
+  width: 148px;
+  color: #FFFFFF;
+  opacity: 50%;
 }
 
 .title {
@@ -190,6 +196,29 @@ nav p {
 }
 .legend p {
   margin-right: 32px;
+}
+
+.user-activity {
+  margin-bottom: 30px;
+}
+
+.score h2 {
+  position: absolute;
+  font-size: 15px;
+  left: 30px;
+  top: 24px;
+}
+.score p {
+  position: absolute;
+  top: 30%;
+  left: 30%;
+  width: 95px;
+  text-align: center;
+  font-size: 16px;
+}
+.score p span {
+  font-weight: bold;
+  font-size: 26px;
 }
 
 /*# sourceMappingURL=style.css.map */
