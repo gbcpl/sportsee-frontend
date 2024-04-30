@@ -17,6 +17,19 @@ function Sessions() {
     return daysOfWeek[day - 1];
   }
 
+  const CustomTooltip = ({ active, payload }) => {
+    if (active && payload && payload.length) {
+      const session = payload[0].payload; 
+      return (
+        <div className="custom-tooltip">
+          <p>{session.sessionLength} min</p>
+        </div>
+      );
+    }
+
+    return null;
+  }
+
   return (
     <div className="sessions">
       <div className="light-red"></div>
@@ -42,11 +55,7 @@ function Sessions() {
         <XAxis dataKey="day" tickFormatter={formatDay} axisLine={false} tickLine={false} tick={{ fill: 'white', opacity: 0.5  }} />
         <YAxis width={20} domain={[0, 'dataMax + 30']} axisLine={false} tick={false} />
         <Tooltip
-          labelFormatter={(value) => {
-            const session = data.find(session => session.day === value);
-            return session ? `${session.sessionLength} min` : '';
-          }}
-          contentStyle={{ color: 'black' }}
+          content={<CustomTooltip />}          
         />
         <Line type="monotone" dataKey="sessionLength" stroke="url(#gradient)" strokeWidth={2} dot={false} activeDot={{ r: 8 }} />
       </LineChart>

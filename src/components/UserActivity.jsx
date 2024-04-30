@@ -11,10 +11,25 @@ function UserActivity() {
   if (error) {
     return <p>Impossible de charger le composant</p>
   }
+
+  const CustomTooltip = ({ active, payload }) => {
+    if (active && payload && payload.length) {
+      const data = payload[0].payload; 
+      return (
+        <div className="custom-tooltip-activity">
+          <p>{data.kilogram}kg</p>
+          <p>{data.calories}Kcal</p>
+        </div>
+      );
+    }
+
+    return null;
+  }
+
  return (
   <div className="user-activity">
       <div className="title">
-        <p>Activité quotidienne</p>
+        <p className="title-activity">Activité quotidienne</p>
         <div className="legend">
           <img src="../src/assets/Oval.png" /><p>Poids (kg)</p>
           <img src="../src/assets/oval-red.png" /><p>Calories brûlées (kCal)</p>
@@ -24,6 +39,7 @@ function UserActivity() {
         width={835}
         height={300}
         data={data}
+        barGap={8}
         margin={{
           top: 5,
           right: 30,
@@ -33,7 +49,9 @@ function UserActivity() {
       >
         <XAxis dataKey="day" />
         <YAxis orientation='right'/>
-        <Tooltip />
+        <Tooltip 
+          content={<CustomTooltip />}   
+        />
         <Bar dataKey="kilogram" fill="#282D30" barSize={10} radius={[20, 20, 0, 0]} />
         <Bar dataKey="calories" fill="#E60000" barSize={10} radius={[20, 20, 0, 0]} />
       </BarChart>

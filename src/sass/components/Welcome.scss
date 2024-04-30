@@ -1,3 +1,7 @@
+.welcome {
+  margin-bottom: 77px;
+}
+
 .welcome h1 {
   font-size: 48px; 
 }
@@ -8,4 +12,15 @@
 
 .firstname {
   color: #FF0101;
+}
+
+.congratulations {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  img {
+    width: 24px;
+    height: 24px;
+  }
 }

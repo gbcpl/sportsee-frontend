@@ -80,6 +80,7 @@ nav p {
   margin-left: 107px;
   margin-right: 90px;
   margin-top: 68px;
+  margin-bottom: 86px;
   width: 100%;
 }
 
@@ -95,6 +96,10 @@ nav p {
   flex-direction: column;
 }
 
+.welcome {
+  margin-bottom: 77px;
+}
+
 .welcome h1 {
   font-size: 48px;
 }
@@ -105,6 +110,17 @@ nav p {
 
 .firstname {
   color: #FF0101;
+}
+
+.congratulations {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+.congratulations img {
+  width: 24px;
+  height: 24px;
 }
 
 .data-count {
@@ -177,10 +193,23 @@ nav p {
   opacity: 50%;
 }
 
+.custom-tooltip {
+  background-color: white;
+  color: black;
+  font-size: 8px;
+  padding: 7px;
+}
+
 .title {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+.title .title-activity {
+  font-size: 15px;
+  padding-left: 32px;
+  padding-top: 24px;
+  font-weight: bold;
 }
 
 .legend {
@@ -200,6 +229,17 @@ nav p {
 
 .user-activity {
   margin-bottom: 30px;
+}
+
+.custom-tooltip-activity {
+  display: flex;
+  flex-direction: column;
+  background-color: #E60000;
+  color: white;
+  font-size: 8px;
+  padding: 7px;
+  text-align: center;
+  gap: 7px;
 }
 
 .score h2 {
