@@ -57,7 +57,7 @@ function Sessions() {
         <Tooltip
           content={<CustomTooltip />}          
         />
-        <Line type="monotone" dataKey="sessionLength" stroke="url(#gradient)" strokeWidth={2} dot={false} activeDot={{ r: 8 }} />
+        <Line type="natural" dataKey="sessionLength" stroke="url(#gradient)" strokeWidth={2} dot={false} activeDot={{ r: 4 }} />
       </LineChart>
     </ResponsiveContainer>
     </div>
