@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 
 const frenchTranslations = {
   'cardio': 'cardio',
@@ -35,5 +36,19 @@ class RadarStrenghts {
     return kindData;
   }
 }
+
+RadarStrenghts.propTypes = {
+  data: PropTypes.shape({
+    data: PropTypes.shape({
+      data: PropTypes.arrayOf(
+        PropTypes.shape({
+          kind: PropTypes.string.isRequired,
+          value: PropTypes.number.isRequired,
+        })
+      ).isRequired,
+      kind: PropTypes.object.isRequired,
+    }).isRequired,
+  }),
+};
 
 export default RadarStrenghts

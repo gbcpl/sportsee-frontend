@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 class TodayScoreModel {
 
   formatData (data) {
@@ -15,5 +17,14 @@ class TodayScoreModel {
       return scoreData;
     }
 }
+
+TodayScoreModel.propTypes = {
+  data: PropTypes.shape({
+    data: PropTypes.shape({
+      todayScore: PropTypes.number,
+      score: PropTypes.number,
+    }).isRequired,
+  }),
+};
 
 export default TodayScoreModel

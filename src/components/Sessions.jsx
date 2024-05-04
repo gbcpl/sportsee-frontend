@@ -1,6 +1,6 @@
 import { Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 import useSessions from '../hooks/useSessions';
-
+import PropTypes from 'prop-types';
 
 function Sessions() {
   const { data, isLoading, error } = useSessions()
@@ -64,4 +64,15 @@ function Sessions() {
   );
 }
 
-  export default Sessions
+Sessions.propTypes = {
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      day: PropTypes.number.isRequired,
+      sessionLength: PropTypes.number.isRequired
+    })
+  ),
+  isLoading: PropTypes.bool,
+  error: PropTypes.string,
+};
+
+export default Sessions

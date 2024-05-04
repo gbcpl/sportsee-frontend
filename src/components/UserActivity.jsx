@@ -1,5 +1,6 @@
 import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid, ResponsiveContainer } from 'recharts';
 import useUserActivity from '../hooks/useUserActivity';
+import PropTypes from 'prop-types';
 
 
 function UserActivity() {
@@ -61,5 +62,17 @@ function UserActivity() {
       </div>
  ) 
 }
+
+UserActivity.propTypes = {
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      day: PropTypes.string.isRequired,
+      kilogram: PropTypes.number.isRequired,
+      calories: PropTypes.number.isRequired
+    })
+  ),
+  isLoading: PropTypes.bool,
+  error: PropTypes.string,
+};
 
 export default UserActivity

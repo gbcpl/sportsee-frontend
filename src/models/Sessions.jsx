@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 class Sessions {
 
   formatData (data) {    
@@ -12,5 +14,18 @@ class Sessions {
       return sessionsData
   }
 }
+
+Sessions.propTypes = {
+  data: PropTypes.shape({
+    data: PropTypes.shape({
+      sessions: PropTypes.arrayOf(
+        PropTypes.shape({
+          day: PropTypes.string.isRequired,
+          sessionLength: PropTypes.number.isRequired,
+        })
+      ).isRequired,
+    }).isRequired,
+  }),
+};
 
 export default Sessions

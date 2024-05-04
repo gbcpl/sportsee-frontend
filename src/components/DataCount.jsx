@@ -1,4 +1,6 @@
-function DataCount( {data} ) {
+import PropTypes from 'prop-types';
+
+function DataCount( { data } ) {
 
   return (
     <div>
@@ -39,5 +41,17 @@ function DataCount( {data} ) {
 
   )
 }
+
+DataCount.propTypes = {
+  data: PropTypes.shape({
+    keyData: PropTypes.shape({
+      calorieCount: PropTypes.number.isRequired,
+      proteinCount: PropTypes.number.isRequired,
+      carbohydrateCount: PropTypes.number.isRequired,
+      lipidCount: PropTypes.number.isRequired,
+    }).isRequired,
+  }),
+};
+
 
 export default DataCount

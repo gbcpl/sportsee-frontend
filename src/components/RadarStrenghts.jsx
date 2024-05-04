@@ -1,6 +1,6 @@
 import useRadarStrenghts from '../hooks/useRadarStrenghts';
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } from 'recharts';
-
+import PropTypes from 'prop-types';
 
 function RadarStrenghts() {
   const { data, isLoading, error } = useRadarStrenghts()
@@ -25,4 +25,17 @@ function RadarStrenghts() {
   );
 }
 
-  export default RadarStrenghts
+export default RadarStrenghts
+
+RadarStrenghts.propTypes = {
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      value: PropTypes.number.isRequired,
+      kind: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired
+    })
+  ),
+  isLoading: PropTypes.bool,
+  error: PropTypes.string,
+};
+

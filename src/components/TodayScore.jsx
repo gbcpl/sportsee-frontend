@@ -1,6 +1,6 @@
 import useTodayScore from '../hooks/useTodayScore';
 import { RadialBarChart, RadialBar, ResponsiveContainer } from 'recharts';
-
+import PropTypes from 'prop-types';
 
 function TodayScore() {
   const { data, isLoading, error } = useTodayScore()
@@ -38,4 +38,15 @@ function TodayScore() {
   );
 }
 
-  export default TodayScore
+TodayScore.propTypes = {
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      test: PropTypes.number.isRequired,
+      score: PropTypes.number.isRequired
+    })
+  ),
+  isLoading: PropTypes.bool,
+  error: PropTypes.string,
+};
+
+export default TodayScore

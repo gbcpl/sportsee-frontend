@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 class UserActivityModel {
 
   formatData (data) {
@@ -14,5 +16,18 @@ class UserActivityModel {
         
   }
 }
+
+UserActivityModel.propTypes = {
+  data: PropTypes.shape({
+    data: PropTypes.shape({
+      sessions: PropTypes.arrayOf(
+        PropTypes.shape({
+          kilogram: PropTypes.number.isRequired,
+          calories: PropTypes.number.isRequired,
+        })
+      ).isRequired,
+    }).isRequired,
+  }),
+};
 
 export default UserActivityModel

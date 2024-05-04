@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 function Welcome({ data }) {
   return (
     <div className="welcome">
@@ -13,5 +15,13 @@ function Welcome({ data }) {
     </div>
   );
 }
+
+Welcome.propTypes = {
+  data: PropTypes.shape({
+    userInfos: PropTypes.shape({
+      firstName: PropTypes.string.isRequired,
+    }),
+  }),
+};
 
 export default Welcome;
