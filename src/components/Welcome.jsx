@@ -1,21 +1,17 @@
-
-function Welcome( {data, user} ) {
-
+function Welcome({ data }) {
   return (
     <div className="welcome">
-     {
-      data && data.length > 0 && 
+      {data && data.userInfos && (
         <div>
-          <h1>Bonjour <span className="firstname">{user.userInfos.firstName}</span></h1>
+          <h1>Bonjour <span className="firstname">{data.userInfos.firstName}</span></h1>
           <div className="congratulations">
-            <p>Félicitation ! Vous avez explosé vos objectifs hier </p>
+            <p>Félicitations ! Vous avez explosé vos objectifs hier </p>
             <img src="../src/assets/clap.png" alt="clap" />
           </div>
         </div>
-     }
+      )}
     </div>
   );
-
 }
 
-export default Welcome
+export default Welcome;

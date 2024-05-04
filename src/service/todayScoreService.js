@@ -1,6 +1,14 @@
 async function todayScoreService() {
+
+  const currentUrl = window.location.href;
+  const matchUrl = currentUrl.match(/\/user\/(\d+)/);
+  let userId = null;
+  if (matchUrl) {
+    userId = parseInt(matchUrl[1], 10);
+  }
+
   try {
-    const response = await fetch('../src/datas/main_user_data.json', {
+    const response = await fetch(`http://localhost:3000/user/${userId}/`, {
     headers: {
       'Content-Type': 'application/json',
       'Accept': 'application/json'

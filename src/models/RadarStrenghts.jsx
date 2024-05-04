@@ -1,24 +1,38 @@
-class RadarStrenghts {
 
-  formatData (data) {
-    const currentUrl = window.location.href;
-    const matchUrl = currentUrl.match(/\/user\/(\d+)/);
-    let userId = null;
-    if (matchUrl) {
-      userId = parseInt(matchUrl[1], 10);
+const frenchTranslations = {
+  'cardio': 'cardio',
+  'energy': 'énergie',
+  'endurance': 'endurance',
+  'strength': 'force',
+  'speed': 'vitesse',
+  'intensity': 'intensité'
+};
+
+class RadarStrenghts {
+  /**
+   * description fonction
+   * @param {*} data // type param et après - description param, autant de fois qu'on a de paarm 
+   * @returns // texte sur ce qu'elle retourne, sinon on suppr
+   */
+  formatData(data) {
+    if (!data || !data.data) {
+        return new Error('Invalid data format');
     }
-    const user = data.find(user => user.userId === userId);
-    
-    if (user) {
-      const kindData = user.data.map(entry => ({
-        kind: user.kind[entry.kind],
-        value: entry.value
-      }));
-      console.log(kindData)
-      return kindData
-    } else {
-      return new Error('User not found')
-    }
+
+    const kindOrder = ['intensity', 'speed', 'strength', 'endurance', 'energy', 'cardio'];
+
+    const kindData = data.data.data.map(entry => ({
+        kind: data.data.kind[entry.kind],
+        value: entry.value,
+        label: frenchTranslations[data.data.kind[entry.kind]]
+    }));
+
+    kindData.sort((a, b) => {
+        return kindOrder.indexOf(a.kind) - kindOrder.indexOf(b.kind);
+    });
+
+    console.log(kindData);
+    return kindData;
   }
 }
 

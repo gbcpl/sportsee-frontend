@@ -12,25 +12,13 @@ function RadarStrenghts() {
     return <p>Impossible de charger le composant</p>
   }
 
-  const frenchTranslations = {
-    1: 'cardio',
-    2: 'énergie',
-    3: 'endurance',
-    4: 'force',
-    5: 'vitesse',
-    6: 'intensité'
-  };
-
-  const tickFormatter = (value) => {
-    return frenchTranslations[value + 1];
-  }
   return (
     <div className="radar">
       <ResponsiveContainer width="100%" height="100%">
-        <RadarChart cx="50%" cy="50%" outerRadius="60%" data={data}>
-          <PolarGrid />
-          <PolarAngleAxis tickFormatter={tickFormatter} tick={{ fill: 'white' }}/>
-          <Radar dataKey="value" stroke="#8884d8" fill="#FF0101" fillOpacity={0.6} />
+        <RadarChart cx="50%" cy="50%" outerRadius="70%" data={data} >
+          <PolarGrid gridType="polygon" radialLines={false} />
+          <PolarAngleAxis dataKey='label' tick={{ fill: 'white' }} dy={5} />
+          <Radar dataKey="value" stroke="transparent" fill="#FF0101" fillOpacity={0.6}/>
         </RadarChart>
       </ResponsiveContainer>
     </div>

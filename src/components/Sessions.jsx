@@ -53,7 +53,7 @@ function Sessions() {
           </linearGradient>
         </defs>
         <XAxis dataKey="day" tickFormatter={formatDay} axisLine={false} tickLine={false} tick={{ fill: 'white', opacity: 0.5  }} />
-        <YAxis width={20} domain={[0, 'dataMax + 30']} axisLine={false} tick={false} />
+        <YAxis width={20} domain={['dataMin - 10', 'dataMax + 30']} axisLine={false} tick={false} />
         <Tooltip
           content={<CustomTooltip />}          
         />

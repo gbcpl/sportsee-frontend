@@ -9,39 +9,32 @@ import Sessions from './components/Sessions';
 import TodayScore from './components/TodayScore';
 
 function App() {
+  const [userData, setUserData] = useState(null); 
 
-  const [data, setData] = useState([]);
+  useEffect(() => {
+    const currentUrl = window.location.href;
+    const matchUrl = currentUrl.match(/\/user\/(\d+)/);
+    let userId = null;
+    if (matchUrl) {
+      userId = parseInt(matchUrl[1], 10);
+    }
 
-  const getData = () => {
-    fetch('../src/datas/main_user_data.json',
-    {
-      headers : { 
+    fetch(`http://localhost:3000/user/${userId}/`, {
+      headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json'
-       }
-    }
-    )
-      .then(function(response){
-        console.log(response)
-        return response.json();
+      }
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+        setUserData(data.data);
       })
-      .then(function(main) {
-        console.log(main);
-        setData(main)
+      .catch(error => {
+        console.error('Error fetching data:', error);
       });
-  }
+  }, []);
 
-  useEffect(()=>{
-    getData()
-  }, [])
-
-  const currentUrl = window.location.href;
-  const matchUrl = currentUrl.match(/\/user\/(\d+)/);
-  let userId = null;
-  if (matchUrl) {
-      userId = parseInt(matchUrl[1], 10);
-  }
-  const user = data.find(user => user.id === userId);  
 
   return (
     <div>
@@ -49,7 +42,7 @@ function App() {
       <div className="mainContainer">
         <NavLeft />
         <div className="graphs">
-          <Welcome data={data} user={user} />
+          <Welcome data={userData} />
           <div className="activity">
             <div className="charts">
               <UserActivity />
@@ -59,7 +52,7 @@ function App() {
                 <TodayScore />
               </div>
             </div>
-            <DataCount data={data} user={user} />
+            <DataCount data={userData} />
           </div>
         </div>
       </div>
