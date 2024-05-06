@@ -2,6 +2,11 @@ import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid, ResponsiveContaine
 import useUserActivity from '../hooks/useUserActivity';
 import PropTypes from 'prop-types';
 
+/**
+ * React component displaying the user' daily activity.
+ * @param {Object} data - User's data.
+ * @returns {JSX.Element} - JSX element displaying a BarChart.
+ */
 
 function UserActivity() {
   const { data, isLoading, error } = useUserActivity()

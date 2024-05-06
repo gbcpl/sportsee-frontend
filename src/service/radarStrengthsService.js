@@ -1,5 +1,4 @@
-
-async function radarStrenghtsService() {
+async function radarStrengthsService() {
   const currentUrl = window.location.href;
   const matchUrl = currentUrl.match(/\/user\/(\d+)/);
   let userId = null;
@@ -23,4 +22,4 @@ async function radarStrenghtsService() {
   }
 }
 
-export default radarStrenghtsService
+export default radarStrengthsService

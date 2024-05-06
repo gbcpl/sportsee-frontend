@@ -1,8 +1,14 @@
-import useRadarStrenghts from '../hooks/useRadarStrenghts';
+import useRadarStrenghts from '../hooks/useRadarStrengths';
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } from 'recharts';
 import PropTypes from 'prop-types';
 
-function RadarStrenghts() {
+/**
+ * React component displaying a radar chart showing six kind of strengths of the user.
+ * @param {Object} data - User's data.
+ * @returns {JSX.Element} - JSX element displaying a RadarChart.
+ */
+
+function RadarStrengths() {
   const { data, isLoading, error } = useRadarStrenghts()
   if (isLoading) {
     return <p>Loading...</p>
@@ -25,9 +31,7 @@ function RadarStrenghts() {
   );
 }
 
-export default RadarStrenghts
-
-RadarStrenghts.propTypes = {
+RadarStrengths.propTypes = {
   data: PropTypes.arrayOf(
     PropTypes.shape({
       value: PropTypes.number.isRequired,
@@ -39,3 +43,4 @@ RadarStrenghts.propTypes = {
   error: PropTypes.string,
 };
 
+export default RadarStrengths

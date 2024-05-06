@@ -4,7 +4,7 @@ import NavLeft from './components/NavLeft'
 import Welcome from './components/Welcome'
 import DataCount from './components/DataCount';
 import UserActivity from './components/UserActivity';
-import RadarStrenghts from './components/RadarStrenghts';
+import RadarStrengths from './components/RadarStrengths';
 import Sessions from './components/Sessions';
 import TodayScore from './components/TodayScore';
 
@@ -48,7 +48,7 @@ function App() {
               <UserActivity />
               <div className="radar-score">
                 <Sessions />
-                <RadarStrenghts />
+                <RadarStrengths />
                 <TodayScore />
               </div>
             </div>
@@ -57,7 +57,6 @@ function App() {
         </div>
       </div>
     </div>
-
   )
 }
 

@@ -1,5 +1,17 @@
 import PropTypes from 'prop-types';
 
+/**
+ * React component displaying the count of calories, proteins, carbohydrates, and lipids.
+ * @param {Object} props - Component's props.
+ * @param {Object} props.data - User's data.
+ * @param {Object} props.data.keyData - Object containing macronutrients counts.
+ * @param {number} props.data.keyData.calorieCount - The count of calories.
+ * @param {number} props.data.keyData.proteinCount - The count of proteins.
+ * @param {number} props.data.keyData.carbohydrateCount - The count of carbohydrates.
+ * @param {number} props.data.keyData.lipidCount - The count of lipids.
+ * @returns {JSX.Element} - JSX element displaying count of macronutrients.
+ */
+
 function DataCount( { data } ) {
 
   return (

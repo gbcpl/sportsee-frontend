@@ -1,5 +1,14 @@
 import PropTypes from 'prop-types';
 
+/**
+ * React component welcoming the user.
+ * @param {Object} props - Component's props.
+ * @param {Object} props.data - User's data.
+ * @param {Object} props.data.userInfos - User's infos.
+ * @param {string} props.data.userInfos.firstName - User's first name.
+ * @returns {JSX.Element} JSX element welcoming the user.
+ */
+
 function Welcome({ data }) {
   return (
     <div className="welcome">

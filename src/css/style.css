@@ -141,12 +141,15 @@ nav p {
   display: flex;
   flex-direction: row;
   margin-bottom: 39px;
+  background-color: #FBFBFB;
+  border-radius: 5px;
 }
 
 .type-count {
   display: flex;
   flex-direction: column;
   align-self: center;
+  padding-right: 51px;
 }
 .type-count .number {
   font-weight: bold;
@@ -237,6 +240,7 @@ nav p {
   margin-bottom: 30px;
   padding-bottom: 23px;
   background-color: #FBFBFB;
+  border-radius: 5px;
 }
 
 .custom-tooltip-activity {
@@ -250,6 +254,9 @@ nav p {
   gap: 7px;
 }
 
+.score {
+  background-color: #FBFBFB;
+}
 .score h2 {
   position: absolute;
   font-size: 15px;

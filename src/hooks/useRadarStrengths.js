@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react"
-import radarStrenghtsService from "../service/radarStrenghtsService"
-import RadarStrenghtsModel from "../models/RadarStrenghts"
+import radarStrengthsService from "../service/radarStrengthsService"
+import RadarStrengthsModel from "../models/RadarStrengths"
 
-function useRadarStrenghts() {
+function useRadarStrengths() {
   const [data, setData] = useState() 
   const [isLoading, setIsLoading] = useState() 
   const [error, setError] = useState() 
@@ -14,8 +14,8 @@ function useRadarStrenghts() {
   const getData =  async () => {
     try {
       setIsLoading(true)
-      const radarStrengthsData = await radarStrenghtsService()
-      const model = new RadarStrenghtsModel()
+      const radarStrengthsData = await radarStrengthsService()
+      const model = new RadarStrengthsModel()
       const formattedData = model.formatData(radarStrengthsData)
       if (!formattedData) {
         setError(new Error('User not found'))
@@ -34,4 +34,4 @@ function useRadarStrenghts() {
   }
 }
 
-export default useRadarStrenghts
+export default useRadarStrengths

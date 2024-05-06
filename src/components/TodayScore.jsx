@@ -2,6 +2,13 @@ import useTodayScore from '../hooks/useTodayScore';
 import { RadialBarChart, RadialBar, ResponsiveContainer } from 'recharts';
 import PropTypes from 'prop-types';
 
+/**
+ * React component displaying today's score of the user.
+ * @param {Object} data - User's data.
+ * @param {number} data.score - User's score.
+ * @returns {JSX.Element} - JSX element displaying a RadialBarChart.
+ */
+
 function TodayScore() {
   const { data, isLoading, error } = useTodayScore()
   if (isLoading) {

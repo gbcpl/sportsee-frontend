@@ -9,17 +9,22 @@ const frenchTranslations = {
   'intensity': 'intensité'
 };
 
-class RadarStrenghts {
+class RadarStrengths {
+
   /**
-   * description fonction
-   * @param {*} data // type param et après - description param, autant de fois qu'on a de paarm 
-   * @returns // texte sur ce qu'elle retourne, sinon on suppr
+   * Format datas for the Radar Chart.
+   * @param {*} data - Data to format.
+   * @param {Object} data.data - Data object containing kind and value properties.
+   * @param {Array} data.data.data - Array of data containing kind and value.
+   * @param {string} data.data.data.kind - Type of data entry.
+   * @param {number} data.data.data.value - Value of the data entry.
+   * @returns {Array} - Formatted data.
    */
+
   formatData(data) {
     if (!data || !data.data) {
         return new Error('Invalid data format');
     }
-
     const kindOrder = ['intensity', 'speed', 'strength', 'endurance', 'energy', 'cardio'];
 
     const kindData = data.data.data.map(entry => ({
@@ -37,7 +42,7 @@ class RadarStrenghts {
   }
 }
 
-RadarStrenghts.propTypes = {
+RadarStrengths.propTypes = {
   data: PropTypes.shape({
     data: PropTypes.shape({
       data: PropTypes.arrayOf(
@@ -51,4 +56,4 @@ RadarStrenghts.propTypes = {
   }),
 };
 
-export default RadarStrenghts
+export default RadarStrengths
