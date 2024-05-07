@@ -15,7 +15,7 @@ function UserActivity() {
   }
   console.log(error)
   if (error) {
-    return <p>Impossible de charger le composant</p>
+    return <p>Impossible de charger le composant.</p>
   }
 
   const CustomTooltip = ({ active, payload }) => {

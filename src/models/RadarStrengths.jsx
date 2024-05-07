@@ -16,15 +16,12 @@ class RadarStrengths {
    * @param {*} data - Data to format.
    * @param {Object} data.data - Data object containing kind and value properties.
    * @param {Array} data.data.data - Array of data containing kind and value.
-   * @param {string} data.data.data.kind - Type of data entry.
+   * @param {string} data.data.data.kind - Data entry of the kind of strength.
    * @param {number} data.data.data.value - Value of the data entry.
    * @returns {Array} - Formatted data.
    */
 
   formatData(data) {
-    if (!data || !data.data) {
-        return new Error('Invalid data format');
-    }
     const kindOrder = ['intensity', 'speed', 'strength', 'endurance', 'energy', 'cardio'];
 
     const kindData = data.data.data.map(entry => ({
