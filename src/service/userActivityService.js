@@ -1,3 +1,5 @@
+// import Activity from '../datas/user_activity.json'
+
 async function userActivityService() {
   const currentUrl = window.location.href;
   const matchUrl = currentUrl.match(/\/user\/(\d+)/);
@@ -7,6 +9,7 @@ async function userActivityService() {
   }
 
   try {
+    // return Activity[userId];
     const response = await fetch(`http://localhost:3000/user/${userId}/activity`, {
     headers: {
       'Content-Type': 'application/json',

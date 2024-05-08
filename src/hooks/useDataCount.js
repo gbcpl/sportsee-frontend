@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react"
 import mainUserDataService from "../service/mainUserDataService"
-import TodayScoreModel from "../models/TodayScore"
+import DataCountModel from "../models/DataCount"
 
-function useTodayScore() {
+function useDataCount() {
   const [data, setData] = useState() 
   const [isLoading, setIsLoading] = useState() 
   const [error, setError] = useState() 
@@ -14,14 +14,13 @@ function useTodayScore() {
   const getData =  async () => {
     try {
       setIsLoading(true)
-      const todayScoreData = await mainUserDataService()
-      const model = new TodayScoreModel()
-      const formattedData = model.formatData(todayScoreData)
+      const dataCount = await mainUserDataService()
+      const model = new DataCountModel()
+      const formattedData = model.formatData(dataCount)
       if (!formattedData) {
         setError(new Error('User not found'))
       } else {
         setData(formattedData);
-
       }
     } catch (err) {
       setError(err)
@@ -34,4 +33,4 @@ function useTodayScore() {
   }
 }
 
-export default useTodayScore
+export default useDataCount

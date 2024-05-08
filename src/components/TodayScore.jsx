@@ -4,8 +4,6 @@ import PropTypes from 'prop-types';
 
 /**
  * React component displaying today's score of the user.
- * @param {Object} data - User's data.
- * @param {number} data.score - User's score.
  * @returns {JSX.Element} - JSX element displaying a RadialBarChart.
  */
 
@@ -14,7 +12,6 @@ function TodayScore() {
   if (isLoading) {
     return <p>Loading...</p>
   }
-  console.log(error)
   if (error) {
     return <p>Impossible de charger le composant.</p>
   }

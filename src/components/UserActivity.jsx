@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 
 /**
  * React component displaying the user' daily activity.
- * @param {Object} data - User's data.
  * @returns {JSX.Element} - JSX element displaying a BarChart.
  */
 
@@ -13,12 +12,11 @@ function UserActivity() {
   if (isLoading) {
     return <p>Loading...</p>
   }
-  console.log(error)
   if (error) {
     return <p>Impossible de charger le composant.</p>
   }
 
-  const CustomTooltip = ({ active, payload }) => {
+  const customTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
       const data = payload[0].payload; 
       return (
@@ -58,7 +56,7 @@ function UserActivity() {
         <YAxis yAxisId="kilogram" dataKey="kilogram" orientation="right" tickLine={false} domain={["dataMin - 2", "dataMax + 1"]} axisLine={false} />
         <YAxis yAxisId="calories" datayKey="calories" orientation="left" hide="true" />
         <Tooltip 
-          content={<CustomTooltip />}   
+          content={customTooltip}   
         />
         <Bar yAxisId="kilogram" dataKey="kilogram" fill="#282D30" barSize={10} radius={[20, 20, 0, 0]} />
         <Bar yAxisId="calories" dataKey="calories" fill="#E60000" barSize={10} radius={[20, 20, 0, 0]} />

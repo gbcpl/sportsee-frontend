@@ -1,3 +1,5 @@
+// import MainUser from '../datas/user_performance.json'
+
 async function radarStrengthsService() {
   const currentUrl = window.location.href;
   const matchUrl = currentUrl.match(/\/user\/(\d+)/);
@@ -6,7 +8,8 @@ async function radarStrengthsService() {
     userId = parseInt(matchUrl[1], 10);
   }
   try {
-    const response = await fetch(`http://localhost:3000/user/${userId}/performance`, {
+  // return MainUser[userId];
+   const response = await fetch(`http://localhost:3000/user/${userId}/performance`, {
     headers: {
       'Content-Type': 'application/json',
       'Accept': 'application/json'
@@ -16,7 +19,7 @@ async function radarStrengthsService() {
     throw new Error('Error fetching data')
   }
     const data = await response.json();
-    return data
+    return data 
   } catch (error) {
     console.error('Error fetching data:', error);
   }

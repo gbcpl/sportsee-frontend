@@ -4,12 +4,7 @@ class UserActivityModel {
 
   /**
    * Format datas for the UserActivity Chart.
-   * @param {*} data - Data to format.
-   * @param {Object} data.data - Data object containing array of sessions.
-   * @param {Array} data.data.sessions - Array of sessions.
-   * @param {number} data.data.sessions.kilogram - Kilogram value.
-   * @param {number} data.data.sessions.calories - Calories burned.
-   * @param {Date} data.data.sessions.day - Day of the week.
+   * @param {Object} data - Data to format.
    * @returns {Array} - Formatted data.
    */
   

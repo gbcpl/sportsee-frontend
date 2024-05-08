@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 
 /**
  * React component displaying the length of the sessions of the user.
- * @param {Object} data - User's data.
  * @returns {JSX.Element} - JSX element displaying a LineChart.
  */
 
@@ -13,7 +12,6 @@ function Sessions() {
   if (isLoading) {
     return <p>Loading...</p>
   }
-  console.log(error)
   if (error) {
     return <p>Impossible de charger le composant.</p>
   }
@@ -23,7 +21,7 @@ function Sessions() {
     return daysOfWeek[day - 1];
   }
 
-  const CustomTooltip = ({ active, payload }) => {
+  const customTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
       const session = payload[0].payload; 
       return (
@@ -61,7 +59,7 @@ function Sessions() {
           <XAxis dataKey="day" tickFormatter={formatDay} axisLine={false} tickLine={false} tick={{ fill: 'white', opacity: 0.5  }} />
           <YAxis width={20} domain={['dataMin - 10', 'dataMax + 30']} axisLine={false} tick={false} />
           <Tooltip
-            content={<CustomTooltip />}          
+            content={customTooltip}          
           />
           <Line type="natural" dataKey="sessionLength" stroke="url(#gradient)" strokeWidth={2} dot={false} activeDot={{ r: 4 }} />
         </LineChart>

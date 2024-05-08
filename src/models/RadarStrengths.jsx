@@ -13,11 +13,7 @@ class RadarStrengths {
 
   /**
    * Format datas for the Radar Chart.
-   * @param {*} data - Data to format.
-   * @param {Object} data.data - Data object containing kind and value properties.
-   * @param {Array} data.data.data - Array of data containing kind and value.
-   * @param {string} data.data.data.kind - Data entry of the kind of strength.
-   * @param {number} data.data.data.value - Value of the data entry.
+   * @param {Object} data - Data to format.
    * @returns {Array} - Formatted data.
    */
 
@@ -34,7 +30,6 @@ class RadarStrengths {
         return kindOrder.indexOf(a.kind) - kindOrder.indexOf(b.kind);
     });
 
-    console.log(kindData);
     return kindData;
   }
 }

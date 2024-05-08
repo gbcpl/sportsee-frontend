@@ -1,7 +1,8 @@
-[
-  {
-      "userId": 12,
-      "sessions": [
+{
+    "12": {
+        "data": {
+            "userId": 12,
+            "sessions": [
           {
               "day": 1,
               "sessionLength": 30
@@ -31,8 +32,10 @@
               "sessionLength": 60
           }
       ]
+    }
   },
-  {
+  "18": {
+    "data": {
       "userId": 18,
       "sessions": [
           {
@@ -64,5 +67,6 @@
               "sessionLength": 50
           }
       ]
+    }
   }
-]
+}

@@ -5,9 +5,6 @@ class TodayScoreModel {
   /**
    * Format datas for the TodayScore Chart.
    * @param {*} data - Data to format.
-   * @param {Object} data.data - Data object containing today's score.
-   * @param {number} [data.data.todayScore] - Today's score.
-   * @param {number} [data.data.score] - Today's score.
    * @returns {Array} - Formatted data.
    */
   
@@ -19,7 +16,6 @@ class TodayScoreModel {
       score = data.data.score * 100;
     }
     const scoreData = [{ score, test:100 }];
-    console.log(scoreData);
     return scoreData;
   }
 }

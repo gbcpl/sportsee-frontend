@@ -1,4 +1,3 @@
-import {useState, useEffect} from 'react';
 import Header from './components/Header'
 import NavLeft from './components/NavLeft'
 import Welcome from './components/Welcome'
@@ -9,32 +8,6 @@ import Sessions from './components/Sessions';
 import TodayScore from './components/TodayScore';
 
 function App() {
-  const [userData, setUserData] = useState(null); 
-
-  useEffect(() => {
-    const currentUrl = window.location.href;
-    const matchUrl = currentUrl.match(/\/user\/(\d+)/);
-    let userId = null;
-    if (matchUrl) {
-      userId = parseInt(matchUrl[1], 10);
-    }
-
-    fetch(`http://localhost:3000/user/${userId}/`, {
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-      }
-    })
-      .then(response => response.json())
-      .then(data => {
-        console.log(data);
-        setUserData(data.data);
-      })
-      .catch(error => {
-        console.error('Error fetching data:', error);
-      });
-  }, []);
-
 
   return (
     <div>
@@ -42,7 +15,7 @@ function App() {
       <div className="mainContainer">
         <NavLeft />
         <div className="graphs">
-          <Welcome data={userData} />
+          <Welcome />
           <div className="activity">
             <div className="charts">
               <UserActivity />
@@ -52,7 +25,7 @@ function App() {
                 <TodayScore />
               </div>
             </div>
-            <DataCount data={userData} />
+            <DataCount />
           </div>
         </div>
       </div>

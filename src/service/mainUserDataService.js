@@ -1,4 +1,6 @@
-async function todayScoreService() {
+// import MainUserData from '../datas/main_user_data.json'
+
+async function mainUserDataService() {
 
   const currentUrl = window.location.href;
   const matchUrl = currentUrl.match(/\/user\/(\d+)/);
@@ -8,6 +10,7 @@ async function todayScoreService() {
   }
 
   try {
+    // return MainUserData[userId];
     const response = await fetch(`http://localhost:3000/user/${userId}/`, {
     headers: {
       'Content-Type': 'application/json',
@@ -24,4 +27,4 @@ async function todayScoreService() {
   }
 }
 
-export default todayScoreService
+export default mainUserDataService

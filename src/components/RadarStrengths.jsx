@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 
 /**
  * React component displaying a radar chart showing six kind of strengths of the user.
- * @param {Object} data - User's data.
  * @returns {JSX.Element} - JSX element displaying a RadarChart.
  */
 
@@ -13,7 +12,6 @@ function RadarStrengths() {
   if (isLoading) {
     return <p>Loading...</p>
   }
-  console.log(error)
   if (error) {
     return <p>Impossible de charger le composant.</p>
   }
