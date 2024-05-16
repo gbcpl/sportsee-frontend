@@ -9,7 +9,7 @@ const frenchTranslations = {
   'intensity': 'intensité'
 };
 
-class RadarStrengths {
+class RadarStrengthsModel {
 
   /**
    * Format datas for the Radar Chart.
@@ -34,7 +34,7 @@ class RadarStrengths {
   }
 }
 
-RadarStrengths.propTypes = {
+RadarStrengthsModel.propTypes = {
   data: PropTypes.shape({
     data: PropTypes.shape({
       data: PropTypes.arrayOf(
@@ -48,4 +48,4 @@ RadarStrengths.propTypes = {
   }),
 };
 
-export default RadarStrengths
+export default RadarStrengthsModel

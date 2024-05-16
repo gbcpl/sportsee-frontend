@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-class Sessions {
+class SessionsModel {
 
   /**
    * Format datas for the Session Chart.
@@ -17,7 +17,7 @@ class Sessions {
   }
 }
 
-Sessions.propTypes = {
+SessionsModel.propTypes = {
   data: PropTypes.shape({
     data: PropTypes.shape({
       sessions: PropTypes.arrayOf(
@@ -30,4 +30,4 @@ Sessions.propTypes = {
   }),
 };
 
-export default Sessions
+export default SessionsModel

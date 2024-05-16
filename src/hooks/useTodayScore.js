@@ -11,7 +11,7 @@ function useTodayScore() {
     getData()
   }, [])
 
-  const getData =  async () => {
+  const getData = async () => {
     try {
       setIsLoading(true)
       const todayScoreData = await mainUserDataService()

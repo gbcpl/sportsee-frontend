@@ -11,7 +11,7 @@ function useUserActivity() {
     getData()
   }, [])
 
-  const getData =  async () => {
+  const getData = async () => {
     try {
       setIsLoading(true)
       const userActivityData = await userActivityService()

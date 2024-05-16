@@ -11,7 +11,7 @@ function useSessions() {
     getData()
   }, [])
 
-  const getData =  async () => {
+  const getData = async () => {
     try {
       setIsLoading(true)
       const sessionsData = await sessionsService()

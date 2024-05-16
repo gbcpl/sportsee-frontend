@@ -3,12 +3,12 @@
   color: #FFFFFF;
   h2 {
     position: absolute;
-    font-size: 15px;
+    font-size: 0.9vw;
     font-weight: 500;
     z-index: 2;
-    left: 34px;
-    top: 29px;
-    width: 148px;
+    padding-top: 5%;
+    padding-left: 10%;
+    width: 80%;
     color: #FFFFFF;
     opacity: 50%;
   }
@@ -18,7 +18,7 @@
 .custom-tooltip {
   background-color: white;
   color: black;
-  font-size: 8px;
   font-weight: 500;
+  font-size: 8px;
   padding: 7px;
 }

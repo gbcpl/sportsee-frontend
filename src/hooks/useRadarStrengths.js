@@ -11,7 +11,7 @@ function useRadarStrengths() {
     getData()
   }, [])
 
-  const getData =  async () => {
+  const getData = async () => {
     try {
       setIsLoading(true)
       const radarStrengthsData = await radarStrengthsService()

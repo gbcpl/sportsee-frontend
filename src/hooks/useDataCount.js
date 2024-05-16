@@ -11,7 +11,7 @@ function useDataCount() {
     getData()
   }, [])
 
-  const getData =  async () => {
+  const getData = async () => {
     try {
       setIsLoading(true)
       const dataCount = await mainUserDataService()

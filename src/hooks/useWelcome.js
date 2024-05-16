@@ -11,7 +11,7 @@ function useWelcome() {
     getData()
   }, [])
 
-  const getData =  async () => {
+  const getData = async () => {
     try {
       setIsLoading(true)
       const welcome = await mainUserDataService()

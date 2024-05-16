@@ -32,14 +32,14 @@ function UserActivity() {
 
  return (
   <div className="user-activity">
-      <div className="title">
-        <p className="title-activity">Activité quotidienne</p>
-        <div className="legend">
-          <img src="../src/assets/Oval.png" /><p className="units">Poids (kg)</p>
-          <img src="../src/assets/oval-red.png" /><p className="units">Calories brûlées (kCal)</p>
-        </div>
-        </div>
-      <ResponsiveContainer width="100%" height="100%" aspect={3}>
+    <div className="title">
+      <p className="title-activity">Activité quotidienne</p>
+      <div className="legend">
+        <img src="../src/assets/Oval.png" /><p className="units">Poids (kg)</p>
+        <img src="../src/assets/oval-red.png" /><p className="units">Calories brûlées (kCal)</p>
+      </div>
+    </div>
+    <ResponsiveContainer width="100%" height="100%" aspect={3}>
       <BarChart
         height={300}
         data={data}
@@ -61,8 +61,8 @@ function UserActivity() {
         <Bar yAxisId="kilogram" dataKey="kilogram" fill="#282D30" barSize={10} radius={[20, 20, 0, 0]} />
         <Bar yAxisId="calories" dataKey="calories" fill="#E60000" barSize={10} radius={[20, 20, 0, 0]} />
       </BarChart>
-      </ResponsiveContainer>
-      </div>
+    </ResponsiveContainer>
+  </div>
  ) 
 }
 

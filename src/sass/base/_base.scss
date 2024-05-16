@@ -1,17 +1,19 @@
-html {
-  height: 100%;
-}
 
-body {
-  height: 100%;
-  margin: 0;
+@media screen and (min-width: 1024px) {
+  html {
+    height: 100%;
+  }
+
+  body {
+    height: 100%;
+    margin: 0;
+  }
 }
 
 #root {
   margin-left: auto;
   margin-right: auto;
   padding: 0;
-  width: 1440px;
 }
 
 .mainContainer {
