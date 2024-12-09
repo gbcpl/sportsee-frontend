@@ -10,10 +10,10 @@ class DataCountModel {
   
   formatData (data) {
     const dataCount = {
-      calorieCount: data.data.keyData.calorieCount,
-      proteinCount: data.data.keyData.proteinCount,
-      carbohydrateCount: data.data.keyData.carbohydrateCount,
-      lipidCount: data.data.keyData.lipidCount
+      calorieCount: data.keyData.calorieCount,
+      proteinCount: data.keyData.proteinCount,
+      carbohydrateCount: data.keyData.carbohydrateCount,
+      lipidCount: data.keyData.lipidCount
     };
     return dataCount;  
   }

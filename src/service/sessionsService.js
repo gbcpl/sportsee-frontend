@@ -7,9 +7,10 @@ async function sessionsService() {
   if (matchUrl) {
     userId = parseInt(matchUrl[1], 10);
   }
+  console.log(`Fetching data from URL: http://localhost:3000/api/user/${userId}/average-sessions`);
   try {
     // return Sessions[userId];
-    const response = await fetch(`http://localhost:3000/user/${userId}/average-sessions`, {
+    const response = await fetch(`http://localhost:3000/api/user/${userId}/average-sessions`, {
     headers: {
       'Content-Type': 'application/json',
       'Accept': 'application/json'
@@ -19,6 +20,7 @@ async function sessionsService() {
     throw new Error('Error fetching data')
   }
     const data = await response.json();
+    console.log('Fetched data:', data);
     return data
   } catch (error) {
     console.error('Error fetching data:', error);

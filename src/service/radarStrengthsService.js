@@ -7,9 +7,10 @@ async function radarStrengthsService() {
   if (matchUrl) {
     userId = parseInt(matchUrl[1], 10);
   }
+  console.log(`Fetching data from URL: http://localhost:3000/api/user/${userId}/performance`);
   try {
   // return MainUser[userId];
-   const response = await fetch(`http://localhost:3000/user/${userId}/performance`, {
+   const response = await fetch(`http://localhost:3000/api/user/${userId}/performance`, {
     headers: {
       'Content-Type': 'application/json',
       'Accept': 'application/json'

@@ -15,6 +15,7 @@ function useSessions() {
     try {
       setIsLoading(true)
       const sessionsData = await sessionsService()
+      console.log("Sessions data:", sessionsData); 
       const model = new SessionsModel()
       const formattedData = model.formatData(sessionsData)
       if (!formattedData) {

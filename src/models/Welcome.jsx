@@ -9,7 +9,7 @@ class WelcomeModel {
    */
   
   formatData (data) {
-    const welcomeData = data.data.userInfos.firstName;
+    const welcomeData = data.userInfos.firstName;
     return welcomeData;
   }
 }

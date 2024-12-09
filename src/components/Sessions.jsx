@@ -9,6 +9,8 @@ import PropTypes from 'prop-types';
 
 function Sessions() {
   const { data, isLoading, error } = useSessions()
+  console.log({ data, isLoading, error });
+  
   if (isLoading) {
     return <p>Loading...</p>
   }

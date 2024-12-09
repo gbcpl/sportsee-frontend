@@ -10,7 +10,7 @@ class UserActivityModel {
   
   formatData (data) {
 
-    const activityData = data.data.sessions.map((session, index) => ({
+    const activityData = data.sessions.map((session, index) => ({
       day: index + 1, 
       kilogram: session.kilogram,
       calories: session.calories

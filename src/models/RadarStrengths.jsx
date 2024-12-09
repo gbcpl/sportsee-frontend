@@ -20,10 +20,10 @@ class RadarStrengthsModel {
   formatData(data) {
     const kindOrder = ['intensity', 'speed', 'strength', 'endurance', 'energy', 'cardio'];
 
-    const kindData = data.data.data.map(entry => ({
-        kind: data.data.kind[entry.kind],
+    const kindData = data.data.map(entry => ({
+        kind: data.kind[entry.kind],
         value: entry.value,
-        label: frenchTranslations[data.data.kind[entry.kind]]
+        label: frenchTranslations[data.kind[entry.kind]]
     }));
 
     kindData.sort((a, b) => {

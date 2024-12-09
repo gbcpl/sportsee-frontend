@@ -10,10 +10,10 @@ class TodayScoreModel {
   
   formatData (data) {
     let score;
-    if (data.data.todayScore) {
-      score = data.data.todayScore * 100;
+    if (data.todayScore) {
+      score = data.todayScore * 100;
     } else {
-      score = data.data.score * 100;
+      score = data.score * 100;
     }
     const scoreData = [{ score, test:100 }];
     return scoreData;

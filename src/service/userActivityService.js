@@ -7,10 +7,11 @@ async function userActivityService() {
   if (matchUrl) {
     userId = parseInt(matchUrl[1], 10);
   }
+  console.log(`Fetching data from URL: http://localhost:3000/api/user/${userId}/activity`);
 
   try {
     // return Activity[userId];
-    const response = await fetch(`http://localhost:3000/user/${userId}/activity`, {
+    const response = await fetch(`http://localhost:3000/api/user/${userId}/activity`, {
     headers: {
       'Content-Type': 'application/json',
       'Accept': 'application/json'

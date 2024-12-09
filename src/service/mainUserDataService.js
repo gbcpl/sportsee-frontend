@@ -8,10 +8,10 @@ async function mainUserDataService() {
   if (matchUrl) {
     userId = parseInt(matchUrl[1], 10);
   }
-
+  console.log(`Fetching data from URL: http://localhost:3000/api/user/${userId}`);
   try {
     // return MainUserData[userId];
-    const response = await fetch(`http://localhost:3000/user/${userId}/`, {
+    const response = await fetch(`http://localhost:3000/api/user/${userId}`, {
     headers: {
       'Content-Type': 'application/json',
       'Accept': 'application/json'

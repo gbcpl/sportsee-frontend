@@ -9,7 +9,7 @@ class SessionsModel {
    */
   
   formatData (data) {    
-    const sessionsData = data.data.sessions.map(session => ({
+    const sessionsData = data.sessions.map(session => ({
         day: session.day,
         sessionLength: session.sessionLength
       }));
